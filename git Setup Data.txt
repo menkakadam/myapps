@@ -1,0 +1,23 @@
+::before-
+
+
+Form-
+ 1) Template Driven form
+ 2) Reactive from
+ 
+Template-
+import { FormsModule } from '@angular/forms'; // app.module
+
+
+========
+Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Git is easy to learn and has a tiny footprint with lightning fast performance.
+
+menkakadam
+menkabhujbal6@gmail.com
+Supriya@1bk@123
+javascript
+
+
+Get setup-
+https://github.com/menkakadam/myapps
+
