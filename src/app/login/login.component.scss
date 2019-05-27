@@ -1,11 +1,11 @@
 .login {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     left: 50%;
     top: 50%;
     position: fixed;
-    margin-left: -150px;
-    margin-top: -150px;
+    margin-left: -160px;
+    margin-top: -160px;
     background:  #fff;
     box-shadow: 0px 0px 5px 0px #3a3636;
     border-radius: 3px;
@@ -21,7 +21,7 @@
 }
 .login form{
     padding: 30px;
-    border-radius: 0; 
+    border-radius: 0;
 }
 .input-group, .form-control, .input-group, .input-group-addon{
     border: none !important;
