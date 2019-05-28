@@ -1,0 +1,51 @@
+header{
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+}
+.fs{
+    font-size: 54px;
+    
+}
+.nav-link{
+    list-style: none;
+}
+.nav-link li{
+    display: inline-block;
+    padding: 4px 10px;    
+}
+.nav-link li a{
+    display: block;
+    color: #000;
+}
+.nav-link li:hover a{
+    color: #03c4eb;
+    text-decoration: none;
+}
+.baner{
+    background-image: url(../../assets/img/business1-1024x683.jpg);
+background-size: 100%;
+padding-top: 340px;
+padding-bottom: 150px;
+color: #fff;
+}
+button.bg{
+    margin: 13px;
+    padding: 10px;
+}
+button.btn-primary{
+    background: none;
+    border: 1px solid;
+}
+button:hover.btn-primary{
+    background: #46b8da;
+}
+button:hover.btn-info{
+    background: none;
+    border: 1px solid;
+}
+button.login{
+    padding: 6px 25px;
+    border-radius: 20px;
+    border: 1px solid;
+}
