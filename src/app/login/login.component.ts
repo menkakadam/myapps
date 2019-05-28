@@ -16,6 +16,16 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     // this.authService.login(this.model).subscribe(data => { this.loader.display(false);})
-    this.authService.login(this.model);
+    // this.authService.login(this.model);
+
+    this.authService.login(this.model).subscribe(
+      (res: any) => {
+        console.log('ok');
+      },
+      error => {
+        console.log('error');
+      }
+    );
+
   }
 }
