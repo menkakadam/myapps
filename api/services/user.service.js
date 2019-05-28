@@ -74,9 +74,7 @@ function getAll() {
 
 function create(userParam) {
     var deferred = Q.defer();
-    // validation
-    db.users.findOne(
-        { username: userParam.username },
+    db.users.findOne({username: userParam.username },
         function (err, user) {
             if (err) deferred.reject(err.name + ': ' + err.message);
             if (user) {
@@ -86,21 +84,18 @@ function create(userParam) {
                 createUser();
             }
         });
-
     function createUser() {
         // set user object to userParam without the cleartext password
-        var user = _.omit(userParam, 'password');
+        ////var user = _.omit(userParam, 'password');
+        var user = userParam;
         // add hashed password to user object
-        user.hash = bcrypt.hashSync(userParam.password, 10);
-        db.users.insert(
-            user,
-            function (err, doc) {
+        //user.hash = bcrypt.hashSync(userParam.password, 10);
+        user.hash = userParam.password;
+        db.users.insert(user, function (err, doc) {
                 if (err) deferred.reject(err.name + ': ' + err.message);
-
                 deferred.resolve();
             });
     }
-
     return deferred.promise;
 }
 

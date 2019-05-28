@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './services/contact.service';
+import { LoaderService } from './services/loader.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ContactService } from './services/contact.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService, ContactService],
+  providers: [AuthService, ContactService, LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
