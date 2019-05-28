@@ -17,8 +17,11 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(data: any) {
-    // const dataSend = {"user":"bk","password":"bk"};
     return this.http.post(this.baseUrl + 'users/authenticate', data);
+  }
+
+  register(data: any) {
+    return this.http.post(this.baseUrl + 'users/register', data);
   }
 
   logout() {

@@ -1,27 +1,48 @@
-<div class="bg-img">
-  <div class="login">
-    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
-      <div class="text-center mb-2 login-text">Login</div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="username" required [(ngModel)]="model.username" #username="ngModel" id="username" type="text" class="form-control" name="username" placeholder="Username">
+<div class='bg-img'>
+  <div class='login'>
+    <form name='form' *ngIf='loginForm' (ngSubmit)='f.form.valid && onSubmit()' #f='ngForm'>
+      <div class='text-center mb-2 login-text'>Login</div>
+      <div class='input-group'>
+        <span class='input-group-addon'><i class='glyphicon glyphicon-user'></i></span>
+        <input name='username' required [(ngModel)]='model.username' #username='ngModel' id='username' type='text' class='form-control' name='username' placeholder='Username'>
         <!-- email -->
       </div>
-      <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
-          <div *ngIf="username.errors.required">Username is required</div>
+      <div *ngIf='f.submitted && username.invalid' class='invalid-feedback'>
+          <div *ngIf='username.errors.required'>Username is required</div>
       </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input name="password" required  [(ngModel)]="model.password" minlength="4" #password="ngModel" id="password" type="password" class="form-control" name="password" placeholder="Password">
+      <div class='input-group'>
+        <span class='input-group-addon'><i class='glyphicon glyphicon-lock'></i></span>
+        <input name='password' required  [(ngModel)]='model.password' minlength='4' #password='ngModel' id='password' type='password' class='form-control' name='password' placeholder='Password'>
       </div>
-      <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">Password must be at least 4 characters</div>
+      <div *ngIf='f.submitted && password.invalid' class='invalid-feedback'>
+          <div *ngIf='password.errors.required'>Password is required</div>
+          <div *ngIf='password.errors.minlength'>Password must be at least 4 characters</div>
       </div>
-      <button class="btn btn-info btn-block">Submit</button>
-      <a href="#" class="forgot">Forgot Password?</a>
-
+      <button class='mb-2 btn btn-info btn-block'>Submit</button>
+      <a (click)='registerLink()' class='register'>Register </a>
+      <a class='forgot'>Forgot Password?</a>
     </form>
 
+    <form name='registerForm' (ngSubmit)='r.form.valid && onRegisterSubmit()'  #r='ngForm' *ngIf='!loginForm'>
+      <div class='text-center mb-2 login-text'>Register</div>
+      <div class='input-group'>
+        <span class='input-group-addon'><i class='glyphicon glyphicon-user'></i></span>
+        <input  required [(ngModel)]='modelRegister.username' #username='ngModel' name='username' type='text' class='form-control'  placeholder='Username'>
+        <!-- email -->
+      </div>
+      <div *ngIf='r.submitted && username.invalid' class='invalid-feedback'>
+          <div *ngIf='username.errors.required'>Username is required</div>
+      </div>
+      <div class='input-group'>
+        <span class='input-group-addon'><i class='glyphicon glyphicon-lock'></i></span>
+        <input required  [(ngModel)]='modelRegister.password' minlength='4' #password='ngModel' name='password' type='password' class='form-control' placeholder='Password'>
+      </div>
+      <div *ngIf='r.submitted && password.invalid' class='invalid-feedback'>
+          <div *ngIf='password.errors.required'>Password is required</div>
+          <div *ngIf='password.errors.minlength'>Password must be at least 4 characters</div>
+      </div>
+      <button class='mb-2 btn btn-info btn-block'>Register</button>
+      <a class='loginLink' (click)='loginLink()'>Go to Login</a>
+    </form>
   </div>
 </div>
